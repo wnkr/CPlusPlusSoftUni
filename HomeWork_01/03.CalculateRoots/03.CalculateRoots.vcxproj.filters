@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="StartUp.cpp">
+    <ClCompile Include="03.CalculateRoots.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
