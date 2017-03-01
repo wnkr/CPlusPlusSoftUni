@@ -29,11 +29,5 @@
     <ClCompile Include="ReverseDigitsShould.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="123.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>
