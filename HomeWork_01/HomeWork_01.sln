@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.CalculateRoots", "03.Cal
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04.PrintNumbers", "04.PrintNumbers\04.PrintNumbers.vcxproj", "{A3D8461C-AF0E-4614-B63C-044DB38E7ADD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05.MinMaxOfSequance", "05.MinMaxOfSequance\05.MinMaxOfSequance.vcxproj", "{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{A3D8461C-AF0E-4614-B63C-044DB38E7ADD}.Release|x64.Build.0 = Release|x64
 		{A3D8461C-AF0E-4614-B63C-044DB38E7ADD}.Release|x86.ActiveCfg = Release|Win32
 		{A3D8461C-AF0E-4614-B63C-044DB38E7ADD}.Release|x86.Build.0 = Release|Win32
+		{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}.Debug|x64.ActiveCfg = Debug|x64
+		{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}.Debug|x64.Build.0 = Debug|x64
+		{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}.Debug|x86.ActiveCfg = Debug|Win32
+		{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}.Debug|x86.Build.0 = Debug|Win32
+		{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}.Release|x64.ActiveCfg = Release|x64
+		{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}.Release|x64.Build.0 = Release|x64
+		{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}.Release|x86.ActiveCfg = Release|Win32
+		{7172B0D1-A575-47A5-9EC9-52FE4B2A18D7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
