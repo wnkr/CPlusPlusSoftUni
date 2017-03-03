@@ -6,7 +6,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace My08ReverseDigitsTests
 {		
-	TEST_CLASS(ReverseDigitsShould)
+	TEST_CLASS(ReverseDigits_Should)
 	{
 	public:
 		
