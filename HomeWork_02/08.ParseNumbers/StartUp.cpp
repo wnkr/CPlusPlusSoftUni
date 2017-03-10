@@ -49,6 +49,8 @@ int main()
 		{
 			sum += array[j];
 		}
+
+		delete[] array;
 	}
 
 	cout << sum << endl;
