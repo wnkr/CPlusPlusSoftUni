@@ -251,3 +251,4 @@ paket-files/
 .idea/
 *.sln.iml
 /HomeWork_02/09.ParseNumbersWithFiles/output.txt
+/HomeWork_02/test.txt
