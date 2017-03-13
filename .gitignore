@@ -252,3 +252,5 @@ paket-files/
 *.sln.iml
 /HomeWork_02/09.ParseNumbersWithFiles/output.txt
 /HomeWork_02/test.txt
+/HomeWork_02/10.CheckLinesAreTheSame/test1.txt
+/HomeWork_02/10.CheckLinesAreTheSame/test2.txt

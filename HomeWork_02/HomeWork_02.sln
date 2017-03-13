@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "08.ParseNumbers", "08.Parse
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "09.ParseNumbersWithFiles", "09.ParseNumbersWithFiles\09.ParseNumbersWithFiles.vcxproj", "{24B04266-3134-4187-B601-9AA3DBA66C72}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10.CheckLinesAreTheSame", "10.CheckLinesAreTheSame\10.CheckLinesAreTheSame.vcxproj", "{4CDB2147-17C0-4867-930F-5E0C1065E945}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -101,6 +103,14 @@ Global
 		{24B04266-3134-4187-B601-9AA3DBA66C72}.Release|x64.Build.0 = Release|x64
 		{24B04266-3134-4187-B601-9AA3DBA66C72}.Release|x86.ActiveCfg = Release|Win32
 		{24B04266-3134-4187-B601-9AA3DBA66C72}.Release|x86.Build.0 = Release|Win32
+		{4CDB2147-17C0-4867-930F-5E0C1065E945}.Debug|x64.ActiveCfg = Debug|x64
+		{4CDB2147-17C0-4867-930F-5E0C1065E945}.Debug|x64.Build.0 = Debug|x64
+		{4CDB2147-17C0-4867-930F-5E0C1065E945}.Debug|x86.ActiveCfg = Debug|Win32
+		{4CDB2147-17C0-4867-930F-5E0C1065E945}.Debug|x86.Build.0 = Debug|Win32
+		{4CDB2147-17C0-4867-930F-5E0C1065E945}.Release|x64.ActiveCfg = Release|x64
+		{4CDB2147-17C0-4867-930F-5E0C1065E945}.Release|x64.Build.0 = Release|x64
+		{4CDB2147-17C0-4867-930F-5E0C1065E945}.Release|x86.ActiveCfg = Release|Win32
+		{4CDB2147-17C0-4867-930F-5E0C1065E945}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
