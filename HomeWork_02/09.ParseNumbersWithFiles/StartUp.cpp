@@ -63,6 +63,8 @@ int main()
 			{
 				sum += array[j];
 			}
+
+			delete[] array;
 		}
 		inputStream.close();
 	}
