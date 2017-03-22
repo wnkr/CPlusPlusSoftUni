@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{317D3485-0E6F-4050-9AC5-D2F778BC2DC7}</ProjectGuid>
+    <ProjectGuid>{ACE2AFAC-BF83-49C1-AE8C-14F8663E2F6B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Task04_NamedOperations</RootNamespace>
+    <RootNamespace>Task04_Test</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,10 +88,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Wanker25\Documents\Visual Studio 2015\Projects\SoftUni_Cpp\googletest\googletest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Wanker25\Documents\Visual Studio 2015\Projects\SoftUni_Cpp\googletest\googletest\msvc\gtest\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtestd.lib;gtest_maind.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -143,9 +147,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="StartUp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
