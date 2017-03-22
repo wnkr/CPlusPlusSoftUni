@@ -57,11 +57,11 @@ int average(const vector<int>& array, int startIndex, int endIndex)
 int minimum(const vector<int>& array, int startIndex, int endIndex)
 {
 	int min = numeric_limits<int>::max();
-	for (const auto& num : array)
+	for (size_t i = startIndex; i < endIndex; i++)
 	{
-		if (num < min)
+		if (array[i] < min)
 		{
-			min = num;
+			min = array[i];
 		}
 	}
 
@@ -71,11 +71,11 @@ int minimum(const vector<int>& array, int startIndex, int endIndex)
 int maximum(const vector<int>& array, int startIndex, int endIndex)
 {
 	int max = numeric_limits<int>::min();
-	for (const auto& num : array)
+	for (size_t i = startIndex; i < endIndex; i++)
 	{
-		if (num > max)
+		if (array[i] > max)
 		{
-			max = num;
+			max = array[i];
 		}
 	}
 
