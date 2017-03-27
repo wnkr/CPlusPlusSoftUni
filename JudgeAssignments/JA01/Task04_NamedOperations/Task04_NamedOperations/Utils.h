@@ -84,7 +84,7 @@ int maximum(const vector<int>& array, int startIndex, int endIndex)
 
 static void PopulatePointerOperations()
 {
-	int(*funcPtr)(const vector<int>&, int, int) = sum;
+	operFuncPtr funcPtr = sum;
 	pointerOperations.push_back(funcPtr);
 
 	funcPtr = average;
