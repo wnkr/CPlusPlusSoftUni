@@ -41,7 +41,7 @@ private:
 			{
 				this->stringToFormat = this->stringToFormat.replace(foundIndex, prefixCharCount + 1, insertArr[prefixCounter]);
 			}
-			else if ( 10 <= prefixCounter && prefixCounter <= 99)
+			else if (10 <= prefixCounter && prefixCounter <= 99)
 			{
 				this->stringToFormat = this->stringToFormat.replace(foundIndex, prefixCharCount + 2, insertArr[prefixCounter]);
 			}
@@ -102,9 +102,15 @@ private:
 	template<typename T>
 	void CheckInsertArr(const vector<T>& insertArr)
 	{
-		if (insertArr.size() > CountPrefixes())
+		int numberOfPrefixes = CountPrefixes();
+		if (insertArr.size() > numberOfPrefixes)
 		{
-			throw "the insertArr is bigger than the number of formatPrefixes in the text";
+			throw "the insertArr is bigger than the number of formatPrefixes in the text.";
+		}
+
+		if (insertArr.size() == 0 && numberOfPrefixes > 0)
+		{
+			throw "the insertArr should have elements.";
 		}
 	}
 };
