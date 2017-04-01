@@ -4,6 +4,8 @@
 #include <vector>
 #include "Person.h"
 #include "CarRegistration.h"
+#include "PersonFileManipulator.h"
+#include "CarRegistrationFileManipulator.h"
 
 using namespace std;
 
@@ -159,6 +161,7 @@ bool PrintMenu()
 	std::cout << "(5): Change owner name" << std::endl;
 	std::cout << "(6): Change owner age" << std::endl;
 	std::cout << "(7): Change car registration" << std::endl;
+	std::cout << "(10): Reset all information" << std::endl;
 	std::cout << "(0): Exit" << std::endl;
 
 	if (std::cin >> myChoice)
@@ -194,6 +197,10 @@ bool PrintMenu()
 		case 7:
 			ChangeCarRegistration();
 			break;
+		case 10:
+			persons.clear();
+			registrations.clear();
+			break;
 		default:
 			std::cout << "ERROR! You have selected an invalid choice." << std::endl;
 			break;
@@ -212,11 +219,27 @@ bool PrintMenu()
 
 int main()
 {
-	bool toContinue = PrintMenu();
-	while (toContinue)
-	{
-		toContinue = PrintMenu();
-	}
+	//bool toContinue = PrintMenu();
+	//while (toContinue)
+	//{
+	//	toContinue = PrintMenu();
+	//}
+
+	//PersonFileManipulator * fm = new PersonFileManipulator();
+	//persons.push_back();
+	//fm->Write(persons);
+
+	//persons.clear();
+
+	//fm->Read(persons);
+	//PrintPersons();
+
+	CarRegistrationFileManipulator * fm = new CarRegistrationFileManipulator();
+
+	Person * owner = new Person("Wan4o Trendoff", 25);
+	registrations.push_back(new CarRegistration("Opel", "Cadet", owner, 69, "SA0000BG"));
+
+	fm->Write(registrations);
 
 	return 0;
 }

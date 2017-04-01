@@ -16,6 +16,12 @@
     <Filter Include="Models">
       <UniqueIdentifier>{531a1d3e-bd0e-4789-bde9-4eb930e4ea06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FileManipulator">
+      <UniqueIdentifier>{4d498762-4e71-4a6a-8088-921b22bbba74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{1c0f37b4-f40e-451d-9c1e-e314398d2401}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StartUp.cpp">
@@ -28,6 +34,15 @@
     </ClInclude>
     <ClInclude Include="Person.h">
       <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonFileManipulator.h">
+      <Filter>FileManipulator</Filter>
+    </ClInclude>
+    <ClInclude Include="StringSplitter.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CarRegistrationFileManipulator.h">
+      <Filter>FileManipulator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

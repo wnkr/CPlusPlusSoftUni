@@ -27,12 +27,7 @@ public:
 
 	void SetName(std::string name)
 	{
-		if (name.empty())
-		{
-			throw "Person name cannot be empty.";
-		}
-
-		this->name = name;
+		this->name = ValidateName(name);
 	}
 
 	int GetAge() const
@@ -42,17 +37,17 @@ public:
 
 	void SetAge(int age)
 	{
-		if (age <= 0)
-		{
-			throw "Invalid person age.";
-		}
-
-		this->age = age;
+		this->age = ValidateAge(age);
 	}
 
 	int GetId() const
 	{
 		return this->uniqueId;
+	}
+
+	void SetId(int id)
+	{
+		this->uniqueId = id;
 	}
 
 	std::string Print() const
@@ -66,6 +61,27 @@ public:
 		output << "..............................";
 
 		return output.str();
+	}
+
+private:
+	static std::string ValidateName(std::string name)
+	{
+		if (name.empty())
+		{
+			throw "Person name cannot be empty.";
+		}
+
+		return name;
+	}
+
+	static int ValidateAge(int age)
+	{
+		if (age <= 0)
+		{
+			throw "Invalid person age.";
+		}
+
+		return age;
 	}
 };
 

@@ -34,16 +34,36 @@ public:
 		this->SetRegistrationNumber(registrationNumber);
 	}
 
+	std::string GetManufacturer() const
+	{
+		return this->manufacturer;
+	}
+
+	std::string GetModel() const
+	{
+		return this->model;
+	}
+
+	int GetHorsepower() const
+	{
+		return this->horsepower;
+	}
+
+	Person& GetPerson() const
+	{
+		return *(this->owner);
+	}
+
 	std::string Print() const
 	{
 		std::ostringstream output;
 
 		output << ".............................." << std::endl;
 		output << "Manufacturer: " << this->manufacturer << std::endl
-			   << "Model: " << this->model << std::endl 
-			   << "Horsepower: " << this->horsepower << std::endl 
-			   << "Registration number: " << this->registrationNumber << std::endl;
-		output << "Current owner: " << std::endl <<  this->owner->Print();
+			<< "Model: " << this->model << std::endl
+			<< "Horsepower: " << this->horsepower << std::endl
+			<< "Registration number: " << this->registrationNumber << std::endl;
+		output << "Current owner: " << std::endl << this->owner->Print();
 
 		return output.str();
 	}
@@ -51,11 +71,16 @@ public:
 private:
 	void SetRegistrationNumber(std::string registrationNumber)
 	{
-	if (registrationNumber.empty())
-	{
-	throw "Car registration number cannot be empty.";
+		this->registrationNumber = this->ValidateRegistrationNumber(registrationNumber);
 	}
 
-	this->registrationNumber = registrationNumber;
+	std::string ValidateRegistrationNumber(std::string registrationNumber)
+	{
+		if (registrationNumber.empty())
+		{
+			throw "Car registration number cannot be empty.";
+		}
+
+		return registrationNumber;
 	}
 };
