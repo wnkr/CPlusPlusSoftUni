@@ -49,9 +49,14 @@ public:
 		return this->horsepower;
 	}
 
-	Person& GetPerson() const
+	Person& GetOwner() const
 	{
 		return *(this->owner);
+	}
+
+	void SetOwner(Person* owner)
+	{
+		this->owner = owner;
 	}
 
 	std::string Print() const

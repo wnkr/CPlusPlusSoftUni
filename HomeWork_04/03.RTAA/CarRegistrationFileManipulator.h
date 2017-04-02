@@ -21,7 +21,7 @@ public:
 			{
 				outStream << registration->GetManufacturer() << DELIMETER << registration->GetModel() << DELIMETER 
 						  << registration->GetHorsepower() << DELIMETER << registration->GetRegistrationNumber() << DELIMETER
-						  << registration->GetPerson().GetId() << std::endl;
+						  << registration->GetOwner().GetId() << std::endl;
 			}
 
 			outStream.close();
@@ -30,6 +30,59 @@ public:
 		else
 		{
 			return false;
+		}
+	}
+
+	static bool Read(std::vector<CarRegistration*>& registrations, const std::vector<Person*> persons)
+	{
+		std::ifstream inStream(FILENAME);
+
+		if (inStream.is_open())
+		{
+			registrations.clear();
+
+			std::vector<std::string> parsedRegistration;
+			std::string line;
+			while (getline(inStream, line))
+			{
+				parsedRegistration = StringSplitter::split(line, DELIMETER);
+
+				Person* owner = FindOwner(std::stoi(parsedRegistration[4]), persons);
+				CarRegistration * registration = new CarRegistration(parsedRegistration[0], parsedRegistration[1], owner, 
+															   std::stoi(parsedRegistration[2]), parsedRegistration[3]);
+
+				registrations.push_back(registration);
+			};
+
+			inStream.close();
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+private:
+	static Person* FindOwner(int id, const std::vector<Person*> persons)
+	{
+		int foundIndex = -1;
+
+		for (size_t i = 0; i < persons.size(); i++)
+		{
+			if (persons[i]->GetId() == id)
+			{
+				foundIndex = i;
+			}
+		}
+
+		if (foundIndex != -1)
+		{
+			return persons[foundIndex];
+		}
+		else
+		{
+			throw "ERROR! Owner not found. Corrupted file with owners.";
 		}
 	}
 };

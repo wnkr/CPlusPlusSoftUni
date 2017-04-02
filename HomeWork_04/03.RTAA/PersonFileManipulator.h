@@ -59,7 +59,6 @@ public:
 			return false;
 		}
 	}
-	
 };
 
 const std::string PersonFileManipulator::FILENAME = "persons.txt";

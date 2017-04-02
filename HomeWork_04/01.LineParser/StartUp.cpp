@@ -127,12 +127,12 @@ int main()
 	auto intArray = lineParser->GetNumbers();
 	PrintVector(intArray);
 
-	string lineWithWords = "wanker,.reknaw!wanker,.reknaw!wanker,.reknaw!wanker,.reknaw!wanker,.reknaw!wanker,.reknaw!wanker,.reknaw!wanker,.reknaw!";
+	string lineWithWords = "pesho,.pesho!pesho,.pesho!pesho,.pesho!pesho,.pesho!pesho,.pesho!pesho,.pesho!pesho,.pesho!pesho,.pesho!";
 	lineParser->ChangeLine(lineWithWords);
 	auto stringArray = lineParser->GetStrings();
 	PrintVector(stringArray);
 
-	string lineWithChars = "wanker reknaw";
+	string lineWithChars = "pesho pesho";
 	lineParser->ChangeLine(lineWithChars);
 	auto charArray = lineParser->GetChars();
 	PrintVector(charArray);

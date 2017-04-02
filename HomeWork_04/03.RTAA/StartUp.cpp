@@ -87,7 +87,7 @@ int GetProperId(string message)
 		}
 		else
 		{
-			std::cout << "Error! You have entered an invalid id." << endl;
+			std::cout << "ERROR! You have entered an invalid id." << endl;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
@@ -161,6 +161,8 @@ bool PrintMenu()
 	std::cout << "(5): Change owner name" << std::endl;
 	std::cout << "(6): Change owner age" << std::endl;
 	std::cout << "(7): Change car registration" << std::endl;
+	std::cout << "(8): Export all persons to file" << std::endl;
+	std::cout << "(9): Export all registrations to file" << std::endl;
 	std::cout << "(10): Reset all information" << std::endl;
 	std::cout << "(0): Exit" << std::endl;
 
@@ -197,9 +199,19 @@ bool PrintMenu()
 		case 7:
 			ChangeCarRegistration();
 			break;
+		case 8:
+			PersonFileManipulator::Write(persons);
+			break;
+		case 9:
+			CarRegistrationFileManipulator::Write(registrations);
+			break;
 		case 10:
 			persons.clear();
 			registrations.clear();
+
+			PersonFileManipulator::Read(persons);
+
+			CarRegistrationFileManipulator::Read(registrations, persons);
 			break;
 		default:
 			std::cout << "ERROR! You have selected an invalid choice." << std::endl;
@@ -217,29 +229,37 @@ bool PrintMenu()
 	return true;
 }
 
+static bool AssertCorrectReadPersons();
+
 int main()
 {
-	//bool toContinue = PrintMenu();
-	//while (toContinue)
-	//{
-	//	toContinue = PrintMenu();
-	//}
+	bool toContinue = PrintMenu();
+	while (toContinue)
+	{
+		toContinue = PrintMenu();
+	}
 
-	//PersonFileManipulator * fm = new PersonFileManipulator();
-	//persons.push_back();
-	//fm->Write(persons);
-
-	//persons.clear();
-
-	//fm->Read(persons);
-	//PrintPersons();
-
-	CarRegistrationFileManipulator * fm = new CarRegistrationFileManipulator();
-
-	Person * owner = new Person("Wan4o Trendoff", 25);
-	registrations.push_back(new CarRegistration("Opel", "Cadet", owner, 69, "SA0000BG"));
-
-	fm->Write(registrations);
+	// cout << AssertCorrectReadPersons() << endl;
 
 	return 0;
+}
+
+static bool AssertCorrectReadPersons()
+{
+	// Arrange
+	Person * p = new Person{ "Pesho®", 25 };
+	string personInfo = p->Print();
+
+	vector<Person*> persons;
+	persons.push_back(p);
+
+	PersonFileManipulator::Write(persons);
+	persons.clear();
+
+	// Act
+	PersonFileManipulator::Read(persons);
+
+	// Assert
+	bool areEqual = personInfo == persons[0]->Print();
+	return areEqual;
 }
