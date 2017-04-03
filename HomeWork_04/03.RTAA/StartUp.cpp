@@ -9,14 +9,14 @@
 
 using namespace std;
 
-static vector<Person*> persons;
-static vector<CarRegistration*> registrations;
+static vector<Person> persons;
+static vector<CarRegistration> registrations;
 
 void PrintPersons()
 {
 	for (const auto& person : persons)
 	{
-		cout << person->Print() << endl;
+		cout << person.Print() << endl;
 	}
 }
 
@@ -24,11 +24,11 @@ void PrintRegistrations()
 {
 	for (const auto& reg : registrations)
 	{
-		cout << reg->Print() << endl;
+		cout << reg.Print() << endl;
 	}
 }
 
-Person* CreatePerson()
+Person CreatePerson()
 {
 	cout << "Enter a name: ";
 	string name;
@@ -38,12 +38,12 @@ Person* CreatePerson()
 	int age;
 	cin >> age;
 
-	Person* person = new Person(name, age);
+	Person person(name, age);
 
 	return person;
 }
 
-CarRegistration* CreateRegistration()
+CarRegistration CreateRegistration()
 {
 	cout << "Enter a manufacturer: ";
 	string manufacturer;
@@ -67,7 +67,7 @@ CarRegistration* CreateRegistration()
 	int id;
 	cin >> id;
 
-	CarRegistration* registration = new CarRegistration(manufacturer, model, persons[id], horsepower, registrationNumber);
+	CarRegistration registration(manufacturer, model, persons[id], horsepower, registrationNumber);
 
 	return registration;
 }
@@ -105,7 +105,7 @@ int GetProperRegistrationNumber(string message)
 	{
 		for (size_t i = 0; i < registrations.size(); i++)
 		{
-			if (registrationNumber == registrations[i]->GetRegistrationNumber())
+			if (registrationNumber == registrations[i].GetRegistrationNumber())
 			{
 				return i;
 			}
@@ -123,7 +123,7 @@ void ChangeOwnerName()
 	string name;
 	cin >> name;
 
-	persons[id]->SetName(name);
+	persons[id].SetName(name);
 }
 
 void ChangeOwnerAge()
@@ -134,7 +134,7 @@ void ChangeOwnerAge()
 	int age;
 	cin >> age;
 
-	persons[id]->SetAge(age);
+	persons[id].SetAge(age);
 }
 
 void ChangeCarRegistration()
@@ -142,11 +142,11 @@ void ChangeCarRegistration()
 	int foundRegistration = GetProperRegistrationNumber("Enter the registration number of the car you want to change:");
 	int id = GetProperId("Enter the id of the person you want be the new owner:");
 
-	cout << "Enter the new registration number for the car with registration number: " << registrations[foundRegistration]->GetRegistrationNumber() << endl;
+	cout << "Enter the new registration number for the car with registration number: " << registrations[foundRegistration].GetRegistrationNumber() << endl;
 	string newRegistrationNumber;
 	cin >> newRegistrationNumber;
 
-	registrations[foundRegistration]->ChangeOwner(persons[id], newRegistrationNumber);
+	registrations[foundRegistration].ChangeOwner(persons[id], newRegistrationNumber);
 }
 
 bool PrintMenu()
@@ -174,13 +174,13 @@ bool PrintMenu()
 			return false;
 		case 1:
 		{
-			Person* owner = CreatePerson();
+			Person owner = CreatePerson();
 			persons.push_back(owner);
 			break;
 		}
 		case 2:
 		{
-			CarRegistration* registration = CreateRegistration();
+			CarRegistration registration = CreateRegistration();
 			registrations.push_back(registration);
 			break;
 		}
@@ -247,10 +247,10 @@ int main()
 static bool AssertCorrectReadPersons()
 {
 	// Arrange
-	Person * p = new Person{ "Pesho®", 25 };
-	string personInfo = p->Print();
+	Person p{ "Pesho®", 25 };
+	string personInfo = p.Print();
 
-	vector<Person*> persons;
+	vector<Person> persons;
 	persons.push_back(p);
 
 	PersonFileManipulator::Write(persons);
@@ -260,6 +260,6 @@ static bool AssertCorrectReadPersons()
 	PersonFileManipulator::Read(persons);
 
 	// Assert
-	bool areEqual = personInfo == persons[0]->Print();
+	bool areEqual = personInfo == persons[0].Print();
 	return areEqual;
 }

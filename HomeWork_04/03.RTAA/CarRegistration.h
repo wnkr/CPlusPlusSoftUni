@@ -7,20 +7,15 @@ class CarRegistration
 private:
 	std::string manufacturer;
 	std::string model;
-	Person* owner;
+	Person owner;
 	int horsepower;
 	std::string registrationNumber;
 
 public:
-	CarRegistration(std::string manufacturer, std::string model, Person* owner, int horsepower, std::string registrationNumber)
+	CarRegistration(std::string manufacturer, std::string model, Person owner, int horsepower, std::string registrationNumber)
 		: manufacturer(manufacturer), model(model), owner(owner), horsepower(horsepower), registrationNumber(registrationNumber)
 	{
 
-	}
-
-	~CarRegistration()
-	{
-		delete owner;
 	}
 
 	std::string GetRegistrationNumber() const
@@ -28,7 +23,7 @@ public:
 		return this->registrationNumber;
 	}
 
-	void ChangeOwner(Person* owner, std::string registrationNumber)
+	void ChangeOwner(Person owner, std::string registrationNumber)
 	{
 		this->owner = owner;
 		this->SetRegistrationNumber(registrationNumber);
@@ -49,12 +44,12 @@ public:
 		return this->horsepower;
 	}
 
-	Person& GetOwner() const
+	Person GetOwner() const
 	{
-		return *(this->owner);
+		return this->owner;
 	}
 
-	void SetOwner(Person* owner)
+	void SetOwner(Person owner)
 	{
 		this->owner = owner;
 	}
@@ -68,7 +63,7 @@ public:
 			<< "Model: " << this->model << std::endl
 			<< "Horsepower: " << this->horsepower << std::endl
 			<< "Registration number: " << this->registrationNumber << std::endl;
-		output << "Current owner: " << std::endl << this->owner->Print();
+		output << "Current owner: " << std::endl << this->owner.Print();
 
 		return output.str();
 	}

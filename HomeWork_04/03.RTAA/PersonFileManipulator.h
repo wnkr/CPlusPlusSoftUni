@@ -11,7 +11,7 @@ private:
 	static const char DELIMETER = ':';
 
 public:
-	static bool Write(const std::vector<Person*>& persons)
+	static bool Write(const std::vector<Person>& persons)
 	{
 		std::ofstream outStream(FILENAME);
 
@@ -19,7 +19,7 @@ public:
 		{
 			for (const auto& person : persons)
 			{
-				outStream << person->GetName() << DELIMETER << person->GetId() << DELIMETER << person->GetAge() << std::endl;
+				outStream << person.GetName() << DELIMETER << person.GetId() << DELIMETER << person.GetAge() << std::endl;
 			}
 
 			outStream.close();
@@ -31,7 +31,7 @@ public:
 		}
 	}
 
-	static bool Read(std::vector<Person*>& persons)
+	static bool Read(std::vector<Person>& persons)
 	{
 		std::ifstream inStream(FILENAME);
 
@@ -45,8 +45,8 @@ public:
 			{
 				parsedPerson = StringSplitter::split(line, DELIMETER);
 
-				Person * person = new Person(parsedPerson[0], std::stoi(parsedPerson[2]));
-				person->SetId(std::stoi(parsedPerson[1]));
+				Person person(parsedPerson[0], std::stoi(parsedPerson[2]));
+				person.SetId(std::stoi(parsedPerson[1]));
 
 				persons.push_back(person);
 			};
