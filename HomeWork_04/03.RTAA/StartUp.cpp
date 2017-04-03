@@ -208,9 +208,7 @@ bool PrintMenu()
 		case 10:
 			persons.clear();
 			registrations.clear();
-
 			PersonFileManipulator::Read(persons);
-
 			CarRegistrationFileManipulator::Read(registrations, persons);
 			break;
 		default:

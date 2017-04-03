@@ -16,10 +16,42 @@ private:
 	std::string nickname = "";
 
 public:
+	AstronomicalObject() {}
+
 	AstronomicalObject(SolarSystem solarSystem, unsigned position, double mass, double radius, AstronomicalObjectType type, std::string nickname)
 		: solarSystem(solarSystem), mass(mass), radius(radius), type(type), nickname(nickname)
 	{
 		this->SetPosition(position);
+	}
+
+	SolarSystem GetSolarSystem() const
+	{
+		return this->solarSystem;
+	}
+
+	unsigned GetPosition() const
+	{
+		return this->position;
+	}
+
+	double GetMass() const
+	{
+		return this->mass;
+	}
+
+	double GetRadius() const
+	{
+		return this->radius;
+	}
+
+	AstronomicalObjectType GetType() const
+	{
+		return this->type;
+	}
+
+	std::string GetNickname() const
+	{
+		return this->nickname;
 	}
 
 	void SetPosition(unsigned position)
@@ -57,13 +89,17 @@ public:
 		return output.str();
 	}
 
-
 private:
 	unsigned ValidatePosition(unsigned position)
 	{
 		if (position <= 0)
 		{
 			throw "Invalid position.";
+		}
+
+		if (this->type == AstronomicalObjectType::Star)
+		{
+			return 1;
 		}
 
 		return position;

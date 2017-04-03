@@ -1,0 +1,4 @@
+solar:1:123:321:0:wanker
+sun4o:3:33.3:19.25:1:
+solar:15:44:33:3:wan4o
+peta:1:2:4:0:petq

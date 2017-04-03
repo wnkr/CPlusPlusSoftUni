@@ -8,6 +8,7 @@ private:
 	std::string name;
 
 public:
+	SolarSystem() {}
 	SolarSystem(std::string name);
 
 	std::string GetName() const;

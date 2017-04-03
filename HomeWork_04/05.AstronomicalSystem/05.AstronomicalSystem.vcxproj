@@ -143,8 +143,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AstronomicalObject.h" />
+    <ClInclude Include="AstronomicalObjectFileManipulator.h" />
     <ClInclude Include="AstronomicalObjectType.h" />
     <ClInclude Include="SolarSystem.h" />
+    <ClInclude Include="SolarSystemFileManipulator.h" />
+    <ClInclude Include="StringSplitter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SolarSystem.cpp" />

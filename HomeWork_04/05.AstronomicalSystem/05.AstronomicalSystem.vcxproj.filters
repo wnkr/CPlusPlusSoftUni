@@ -22,6 +22,15 @@
     <Filter Include="Enums">
       <UniqueIdentifier>{42a7c00c-b663-4ac2-a44d-c6f375e7d6b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\FileManipulator">
+      <UniqueIdentifier>{8a04468c-8661-4d86-a612-0045c7c03fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FileManipulator">
+      <UniqueIdentifier>{ce4cdf66-0870-4edf-b438-576747d5635d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{de3bfab5-32c7-4630-9580-625787b2b99c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AstronomicalObject.h">
@@ -32,6 +41,15 @@
     </ClInclude>
     <ClInclude Include="AstronomicalObjectType.h">
       <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="StringSplitter.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="SolarSystemFileManipulator.h">
+      <Filter>Header Files\FileManipulator</Filter>
+    </ClInclude>
+    <ClInclude Include="AstronomicalObjectFileManipulator.h">
+      <Filter>Header Files\FileManipulator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

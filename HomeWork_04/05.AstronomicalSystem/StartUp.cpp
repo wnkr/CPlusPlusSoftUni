@@ -3,6 +3,8 @@
 
 #include "AstronomicalObject.h"
 #include "SolarSystem.h"
+#include "SolarSystemFileManipulator.h"
+#include "AstronomicalObjectFileManipulator.h"
 
 using namespace std;
 
@@ -75,7 +77,7 @@ AstronomicalObject CreateAstroObject()
 {
 	if (solarSystems.empty())
 	{
-		throw "Create first some solar systems.";
+		throw "First create some solar systems.";
 	}
 
 	int foundSolarSystemIndex = GetProperSolarSystemIndex("Enter the name of the solar system your object is part of: ");
@@ -87,15 +89,8 @@ AstronomicalObject CreateAstroObject()
 	AstronomicalObjectType type = (AstronomicalObjectType)typeInput;
 
 	unsigned position;
-	if (type == AstronomicalObjectType::Star)
-	{
-		position = 1;
-	}
-	else
-	{
-		cout << "Enter the position of the object in the system: ";
-		cin >> position;
-	}
+	cout << "Enter the position of the object in the system(always 1 for objects of type Star): ";
+	cin >> position;
 
 	cout << "Enter the mass of the object: ";
 	double mass;
@@ -104,8 +99,6 @@ AstronomicalObject CreateAstroObject()
 	cout << "Enter the radius of the object: ";
 	double radius;
 	cin >> radius;
-
-	
 
 	cin.ignore();
 	cout << "Enter nickname for the object(optional): ";
@@ -122,10 +115,10 @@ bool PrintMenu()
 	int myChoice = 0;
 
 	std::cout << "********** Main Menu **********" << std::endl;
-	std::cout << "(1): Create new astronomical object" << std::endl;
-	std::cout << "(2): Create new solar system" << std::endl;
-	std::cout << "(3): List all astronomical objects" << std::endl;
-	std::cout << "(4): List all solar systems" << std::endl;
+	std::cout << "(1): Create new solar system" << std::endl;
+	std::cout << "(2): Create new astronomical object" << std::endl;
+	std::cout << "(3): List all solar systems" << std::endl;
+	std::cout << "(4): List all astronomical objects" << std::endl;
 	std::cout << "(0): Exit" << std::endl;
 
 	if (std::cin >> myChoice)
@@ -136,21 +129,23 @@ bool PrintMenu()
 			return false;
 		case 1:
 		{
-			AstronomicalObject owner = CreateAstroObject();
-			astroObjects.push_back(owner);
+			SolarSystem solarSystem = CreateSolarSystem();
+			solarSystems.push_back(solarSystem);
+			SolarSystemFileManipulator::Write(solarSystems);
 			break;
 		}
 		case 2:
 		{
-			SolarSystem solarSystem = CreateSolarSystem();
-			solarSystems.push_back(solarSystem);
+			AstronomicalObject owner = CreateAstroObject();
+			astroObjects.push_back(owner);
+			AstronomicalObjectFileManipulator::Write(astroObjects);
 			break;
 		}
 		case 3:
-			PrintAstroObjects();
+			PrintSolarSystems();
 			break;
 		case 4:
-			PrintSolarSystems();
+			PrintAstroObjects();
 			break;
 		default:
 			std::cout << "ERROR! You have selected an invalid choice." << std::endl;
@@ -168,12 +163,20 @@ bool PrintMenu()
 	return true;
 }
 
+void LoadInfo()
+{
+	solarSystems.clear();
+	astroObjects.clear();
+	SolarSystemFileManipulator::Read(solarSystems);
+	AstronomicalObjectFileManipulator::Read(astroObjects);
+}
+
 int main()
 {
-	bool toContinue = PrintMenu();
-	while (toContinue)
+	LoadInfo();
+
+	while (PrintMenu())
 	{
-		toContinue = PrintMenu();
 	}
 
 	return 0;
