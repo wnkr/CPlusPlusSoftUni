@@ -16,6 +16,16 @@ public:
 
 	std::string ToString() const;
 
+	bool operator==(const SolarSystem& other)
+	{
+		return this->name == other.name;
+	}
+
+	bool operator!=(const SolarSystem& other)
+	{
+		return !(*this == other);
+	}
+
 private:
 	static std::string ValidateName(std::string name);
 };

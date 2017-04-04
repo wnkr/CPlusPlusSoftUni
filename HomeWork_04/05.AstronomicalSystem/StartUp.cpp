@@ -11,7 +11,7 @@ using namespace std;
 vector<AstronomicalObject> astroObjects;
 vector<SolarSystem> solarSystems;
 
-void PrintAstroObjects()
+void PrintAstroObjects(const vector<AstronomicalObject>& astroObjects)
 {
 	if (astroObjects.empty())
 	{
@@ -26,7 +26,7 @@ void PrintAstroObjects()
 	}
 }
 
-void PrintSolarSystems()
+void PrintSolarSystems(const vector<SolarSystem>& solarSystem)
 {
 	if (solarSystems.empty())
 	{
@@ -45,7 +45,9 @@ SolarSystem CreateSolarSystem()
 {
 	cout << "Enter a name: ";
 	string name;
-	cin >> name;
+
+	cin.ignore();
+	getline(cin, name);
 
 	SolarSystem solarSystem(name);
 
@@ -54,7 +56,7 @@ SolarSystem CreateSolarSystem()
 
 int GetProperSolarSystemIndex(string message)
 {
-	PrintSolarSystems();
+	PrintSolarSystems(solarSystems);
 
 	cout << message;
 	string solarName;
@@ -110,6 +112,54 @@ AstronomicalObject CreateAstroObject()
 	return astroObject;
 }
 
+
+vector<AstronomicalObject> FindAllPlanetsInSystem(const SolarSystem& solarSystem)
+{
+	vector<AstronomicalObject> objects;
+
+	for (const auto& astroObject : astroObjects)
+	{
+		if (astroObject.GetSolarSystem() == solarSystem)
+		{
+			objects.push_back(astroObject);
+		}
+	}
+
+	return objects;
+}
+
+SolarSystem& GetProperSolarSystem(string message)
+{
+	PrintSolarSystems(solarSystems);
+
+	cout << message;
+	string solarSystemName;
+
+	cin.ignore();
+	while (getline(cin, solarSystemName))
+	{
+		for (size_t i = 0; i < solarSystems.size(); i++)
+		{
+			if (solarSystemName == solarSystems[i].GetName())
+			{
+				return solarSystems[i];
+			}
+		}
+
+		cout << "The entered solar system name is not in the database. Enter new one:" << endl;
+	}
+}
+
+void SearchForSolarSystem()
+{
+	SolarSystem solarSystem = GetProperSolarSystem("Enter the solar system you want to list all planets: ");
+
+	auto planets = FindAllPlanetsInSystem(solarSystem);
+
+	cout << "All planets int the " << solarSystem.GetName() << " system:" << endl;
+	PrintAstroObjects(planets);
+}
+
 bool PrintMenu()
 {
 	int myChoice = 0;
@@ -119,6 +169,7 @@ bool PrintMenu()
 	std::cout << "(2): Create new astronomical object" << std::endl;
 	std::cout << "(3): List all solar systems" << std::endl;
 	std::cout << "(4): List all astronomical objects" << std::endl;
+	std::cout << "(5): List all planets in a star system" << std::endl;
 	std::cout << "(0): Exit" << std::endl;
 
 	if (std::cin >> myChoice)
@@ -142,10 +193,13 @@ bool PrintMenu()
 			break;
 		}
 		case 3:
-			PrintSolarSystems();
+			PrintSolarSystems(solarSystems);
 			break;
 		case 4:
-			PrintAstroObjects();
+			PrintAstroObjects(astroObjects);
+			break;
+		case 5:
+			SearchForSolarSystem();
 			break;
 		default:
 			std::cout << "ERROR! You have selected an invalid choice." << std::endl;
