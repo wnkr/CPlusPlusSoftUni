@@ -26,6 +26,16 @@ string SolarSystem::ToString() const
 	return output.str();
 }
 
+bool SolarSystem::operator==(const SolarSystem& other)
+{
+	return this->name == other.name;
+}
+
+bool SolarSystem::operator!=(const SolarSystem& other)
+{
+	return !(*this == other);
+}
+
 string SolarSystem::ValidateName(string name)
 {
 	if (name.empty())
