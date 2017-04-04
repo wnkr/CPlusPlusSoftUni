@@ -160,6 +160,41 @@ void SearchForSolarSystem()
 	PrintAstroObjects(planets);
 }
 
+int FindPlanet(const vector<AstronomicalObject>& planets, int position)
+{
+	int foundIndex = -1;
+	for (rsize_t i = 0; i < planets.size(); i++)
+	{
+		if (planets[i].GetPosition() == position)
+		{
+			foundIndex = i;
+		}
+	}
+
+	return foundIndex;
+}
+
+void SearchForPlanet()
+{
+	SolarSystem solarSystem = GetProperSolarSystem("Enter the solar system your planet is part of: ");
+	auto planets = FindAllPlanetsInSystem(solarSystem);
+
+	cout << "Enter the position of the planet in the solar system: ";
+	int position;
+	cin >> position;
+
+	int foundPlanetIndex = FindPlanet(planets, position);
+	if (foundPlanetIndex != -1)
+	{
+		cout << "The planet is found:" << endl;
+		cout << planets[foundPlanetIndex].ToString() << endl;
+	}
+	else
+	{
+		cout << "The planet with position " << position << " is not found." << endl;;
+	}
+}
+
 bool PrintMenu()
 {
 	int myChoice = 0;
@@ -170,6 +205,7 @@ bool PrintMenu()
 	std::cout << "(3): List all solar systems" << std::endl;
 	std::cout << "(4): List all astronomical objects" << std::endl;
 	std::cout << "(5): List all planets in a star system" << std::endl;
+	std::cout << "(6): Find a planet with a name and a position" << std::endl;
 	std::cout << "(0): Exit" << std::endl;
 
 	if (std::cin >> myChoice)
@@ -200,6 +236,9 @@ bool PrintMenu()
 			break;
 		case 5:
 			SearchForSolarSystem();
+			break;
+		case 6:
+			SearchForPlanet();
 			break;
 		default:
 			std::cout << "ERROR! You have selected an invalid choice." << std::endl;
