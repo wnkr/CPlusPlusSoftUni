@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{8bcca24b-1da9-4bf8-8ce4-ac45fe57b8b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Figures">
+      <UniqueIdentifier>{c3f4da86-ff88-4808-838d-ce9d2e1cd409}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enums">
+      <UniqueIdentifier>{dfdc9a91-4fa1-4aa5-9e3d-e299219c1a9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\FigurePosition">
+      <UniqueIdentifier>{00bc07ce-ac24-4c81-b3b9-b6524068b697}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StartUp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figure.cpp">
+      <Filter>Core\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="FigurePosition.cpp">
+      <Filter>Core\FigurePosition</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Core\Figures</Filter>
+    </ClCompile>
+    <ClCompile Include="ChessUtils.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rook.cpp">
+      <Filter>Core\Figures</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Figure.h">
+      <Filter>Core\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="FigureColor.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="FigurePosition.h">
+      <Filter>Core\FigurePosition</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Core\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="ChessUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rook.h">
+      <Filter>Core\Figures</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
