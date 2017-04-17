@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02.SequenceGenerator", "02.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01.LowestTermsFraction", "01.LowestTermsFraction\01.LowestTermsFraction.vcxproj", "{76201E7E-A00E-4358-8EBD-11DB3D645E37}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.SequencePrinter", "03.SequencePrinter\03.SequencePrinter.vcxproj", "{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{76201E7E-A00E-4358-8EBD-11DB3D645E37}.Release|x64.Build.0 = Release|x64
 		{76201E7E-A00E-4358-8EBD-11DB3D645E37}.Release|x86.ActiveCfg = Release|Win32
 		{76201E7E-A00E-4358-8EBD-11DB3D645E37}.Release|x86.Build.0 = Release|Win32
+		{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}.Debug|x64.ActiveCfg = Debug|x64
+		{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}.Debug|x64.Build.0 = Debug|x64
+		{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}.Debug|x86.ActiveCfg = Debug|Win32
+		{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}.Debug|x86.Build.0 = Debug|Win32
+		{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}.Release|x64.ActiveCfg = Release|x64
+		{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}.Release|x64.Build.0 = Release|x64
+		{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}.Release|x86.ActiveCfg = Release|Win32
+		{A87B2B5F-5938-42B5-9140-5ECBB0088FEB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

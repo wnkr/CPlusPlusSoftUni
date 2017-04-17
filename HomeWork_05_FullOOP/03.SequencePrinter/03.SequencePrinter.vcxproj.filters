@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="SequenceGenerators">
+      <UniqueIdentifier>{18b05923-0b56-4c4b-a968-3899eb9b6000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SequencePrinters">
+      <UniqueIdentifier>{af00a6fc-76e6-4dde-861e-529fea064041}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StartUp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FibonacciGenerator.cpp">
+      <Filter>SequenceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="SequenceGenerator.cpp">
+      <Filter>SequenceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="SqrtGenerator.cpp">
+      <Filter>SequenceGenerators</Filter>
+    </ClCompile>
+    <ClCompile Include="SequencePrinter.cpp">
+      <Filter>SequencePrinters</Filter>
+    </ClCompile>
+    <ClCompile Include="SequencePrinterBase.cpp">
+      <Filter>SequencePrinters</Filter>
+    </ClCompile>
+    <ClCompile Include="SequencePrinterToConsole.cpp">
+      <Filter>SequencePrinters</Filter>
+    </ClCompile>
+    <ClCompile Include="SequencePrinterToFile.cpp">
+      <Filter>SequencePrinters</Filter>
+    </ClCompile>
+    <ClCompile Include="SequencePrinterToString.cpp">
+      <Filter>SequencePrinters</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FibonacciGenerator.h">
+      <Filter>SequenceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="SequenceGenerator.h">
+      <Filter>SequenceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="SqrtGenerator.h">
+      <Filter>SequenceGenerators</Filter>
+    </ClInclude>
+    <ClInclude Include="SequencePrinter.h">
+      <Filter>SequencePrinters</Filter>
+    </ClInclude>
+    <ClInclude Include="SequencePrinterBase.h">
+      <Filter>SequencePrinters</Filter>
+    </ClInclude>
+    <ClInclude Include="SequencePrinterToConsole.h">
+      <Filter>SequencePrinters</Filter>
+    </ClInclude>
+    <ClInclude Include="SequencePrinterToFile.h">
+      <Filter>SequencePrinters</Filter>
+    </ClInclude>
+    <ClInclude Include="SequencePrinterToString.h">
+      <Filter>SequencePrinters</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
