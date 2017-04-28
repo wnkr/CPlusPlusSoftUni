@@ -104,9 +104,9 @@ void List::removeAll()
 	Node *ptrHead = this->head;
 	while (ptrHead != nullptr)
 	{
-		Node *temp = ptrHead->getNext();
+		Node *next = ptrHead->getNext();
 		delete ptrHead;
-		ptrHead = temp;
+		ptrHead = next;
 	}
 
 	this->head = nullptr;
@@ -167,9 +167,9 @@ List & List::operator=(const List & other)
 		Node *ptrhead = this->head;
 		while (ptrhead != nullptr)
 		{
-			Node *temp = ptrhead->getNext();
+			Node *next = ptrhead->getNext();
 			delete ptrhead;
-			ptrhead = temp;
+			ptrhead = next;
 		}
 
 		this->head = nullptr;
@@ -190,8 +190,8 @@ List::~List()
 	Node *ptrHead = this->head;
 	while (ptrHead != nullptr)
 	{
-		Node *temp = ptrHead->getNext();
+		Node *next = ptrHead->getNext();
 		delete ptrHead;
-		ptrHead = temp;
+		ptrHead = next;
 	}
 }
