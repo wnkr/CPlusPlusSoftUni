@@ -13,13 +13,14 @@ int main()
 	string inputLine;
 	getline(cin, inputLine);
 
-	unordered_map<string, Visitor> visitors;
+	map<string, string> visitorsNames;
+	map<string, int> visitorsAges;
 
 	while (inputLine != "end")
 	{
 		vector<string> tokens = tokenizeString(inputLine);
 
-		processCommand(tokens, visitors);
+		processCommand(tokens, visitorsNames, visitorsAges);
 
 		getline(cin, inputLine);
 	}
