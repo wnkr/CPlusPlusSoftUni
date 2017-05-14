@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task03_Minerals_TestGenerat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task04_Visitors", "Task04_Visitors\Task04_Visitors.vcxproj", "{DB379AF1-5831-42A0-B709-AB11D4BB7921}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task02_Rox", "Task02_Rox\Task02_Rox.vcxproj", "{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{DB379AF1-5831-42A0-B709-AB11D4BB7921}.Release|x64.Build.0 = Release|x64
 		{DB379AF1-5831-42A0-B709-AB11D4BB7921}.Release|x86.ActiveCfg = Release|Win32
 		{DB379AF1-5831-42A0-B709-AB11D4BB7921}.Release|x86.Build.0 = Release|Win32
+		{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}.Debug|x64.ActiveCfg = Debug|x64
+		{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}.Debug|x64.Build.0 = Debug|x64
+		{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}.Debug|x86.ActiveCfg = Debug|Win32
+		{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}.Debug|x86.Build.0 = Debug|Win32
+		{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}.Release|x64.ActiveCfg = Release|x64
+		{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}.Release|x64.Build.0 = Release|x64
+		{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}.Release|x86.ActiveCfg = Release|Win32
+		{AC7DC2FA-21E6-46B1-827B-7434DDDDD3E7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
