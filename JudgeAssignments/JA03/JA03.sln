@@ -17,6 +17,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringSearchingAlgorithms",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task02_Rox_TestGenerator", "Task02_Rox_TestGenerator\Task02_Rox_TestGenerator.vcxproj", "{BDADF92F-440F-4975-83BC-84D63B7033BC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task02_Rox_TestProject1", "Task02_Rox_TestProject1\Task02_Rox_TestProject1.vcxproj", "{FB835C50-A6A1-4420-BA23-5446368F0941}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task02_Rox_TestProject2", "Task02_Rox_TestProject2\Task02_Rox_TestProject2.vcxproj", "{8B93F051-E8E3-4C69-A633-4236FF21B783}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +85,22 @@ Global
 		{BDADF92F-440F-4975-83BC-84D63B7033BC}.Release|x64.Build.0 = Release|x64
 		{BDADF92F-440F-4975-83BC-84D63B7033BC}.Release|x86.ActiveCfg = Release|Win32
 		{BDADF92F-440F-4975-83BC-84D63B7033BC}.Release|x86.Build.0 = Release|Win32
+		{FB835C50-A6A1-4420-BA23-5446368F0941}.Debug|x64.ActiveCfg = Debug|x64
+		{FB835C50-A6A1-4420-BA23-5446368F0941}.Debug|x64.Build.0 = Debug|x64
+		{FB835C50-A6A1-4420-BA23-5446368F0941}.Debug|x86.ActiveCfg = Debug|Win32
+		{FB835C50-A6A1-4420-BA23-5446368F0941}.Debug|x86.Build.0 = Debug|Win32
+		{FB835C50-A6A1-4420-BA23-5446368F0941}.Release|x64.ActiveCfg = Release|x64
+		{FB835C50-A6A1-4420-BA23-5446368F0941}.Release|x64.Build.0 = Release|x64
+		{FB835C50-A6A1-4420-BA23-5446368F0941}.Release|x86.ActiveCfg = Release|Win32
+		{FB835C50-A6A1-4420-BA23-5446368F0941}.Release|x86.Build.0 = Release|Win32
+		{8B93F051-E8E3-4C69-A633-4236FF21B783}.Debug|x64.ActiveCfg = Debug|x64
+		{8B93F051-E8E3-4C69-A633-4236FF21B783}.Debug|x64.Build.0 = Debug|x64
+		{8B93F051-E8E3-4C69-A633-4236FF21B783}.Debug|x86.ActiveCfg = Debug|Win32
+		{8B93F051-E8E3-4C69-A633-4236FF21B783}.Debug|x86.Build.0 = Debug|Win32
+		{8B93F051-E8E3-4C69-A633-4236FF21B783}.Release|x64.ActiveCfg = Release|x64
+		{8B93F051-E8E3-4C69-A633-4236FF21B783}.Release|x64.Build.0 = Release|x64
+		{8B93F051-E8E3-4C69-A633-4236FF21B783}.Release|x86.ActiveCfg = Release|Win32
+		{8B93F051-E8E3-4C69-A633-4236FF21B783}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
