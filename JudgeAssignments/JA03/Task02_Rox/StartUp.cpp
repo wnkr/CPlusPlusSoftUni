@@ -3,47 +3,91 @@
 #include <set>
 #include <map>
 #include <fstream>
+#include <iomanip>
+#include <cmath>  
 
 using namespace std;
 
+int getDecFromHex(char ch)
+{
+	switch (ch)
+	{
+	case 'a':
+	case 'b':
+	case 'c':
+	case 'd':
+	case 'e':
+	case 'f':
+		return ch - 'a' + 10;
+	default:
+		return ch - '0';
+	}
+}
+
 int main()
 {
-	string input;
-	//cin >> input;
+	// Optimize solution
+	const unsigned int NumOfDigitsPerNumber = 5;
 
-	ifstream fileInput("test1.txt");
-	getline(fileInput, input);
+	char currentDNA[NumOfDigitsPerNumber] = {};
 
-	int length = input.size();
-	int numberOfDNAs = length / 5;
+	size_t xorred = 0;
 
-	set<string> DNAs;
-
-	int pos = 0;
-	while (numberOfDNAs > 0)
+	while (cin >> currentDNA[0])
 	{
-		string currDNA = input.substr(pos, 5);
-
-		bool is_in = DNAs.find(currDNA) != DNAs.end();
-		if (is_in)
+		if (currentDNA[0] == '.')
 		{
-			DNAs.erase(currDNA);
-		}
-		else
-		{
-			DNAs.insert(currDNA);
+			break;
 		}
 
-		pos += 5;
-		numberOfDNAs--;
+		cin >> currentDNA[1] >> currentDNA[2] >> currentDNA[3] >> currentDNA[4];
+
+		int value = 0;
+		for (size_t i = 0; i < NumOfDigitsPerNumber; i++)
+		{
+			value += getDecFromHex(currentDNA[i]) * (int)pow(16, 4 - i);
+		}
+
+		xorred ^= value;
 	}
 
+	cout << hex << setfill('0') << setw(5) << xorred << endl;
 
-	for (const auto& dna : DNAs)
-	{
-		cout << dna << endl;
-	}
+	/// Trivial solution
+	//string input;
+	////cin >> input;
 
+	//ifstream fileInput("test1.txt");
+	//getline(fileInput, input);
+
+	//int length = input.size();
+	//int numberOfDNAs = length / 5;
+
+	//set<string> DNAs;
+
+	//int pos = 0;
+	//while (numberOfDNAs > 0)
+	//{
+	//	string currDNA = input.substr(pos, 5);
+
+	//	bool is_in = DNAs.find(currDNA) != DNAs.end();
+	//	if (is_in)
+	//	{
+	//		DNAs.erase(currDNA);
+	//	}
+	//	else
+	//	{
+	//		DNAs.insert(currDNA);
+	//	}
+
+	//	pos += 5;
+	//	numberOfDNAs--;
+	//}
+
+	//for (const auto& dna : DNAs)
+	//{
+	//	cout << dna << endl;
+	//}
 
 	return 0;
 }

@@ -39,8 +39,6 @@ int getDecFromHex(char ch)
 	}
 }
 
-// map<int, int> dnas;
-
 int main() {
 
 	string input;
@@ -51,6 +49,7 @@ int main() {
 
 	int length = input.length() - 1;
 
+	// map<int, int> dnas;
 	for (size_t i = 0; i < length; i += 5)
 	{
 		int currDNA = getDecFromHex(input[i]) * pow(16, 4)
