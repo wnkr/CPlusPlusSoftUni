@@ -103,6 +103,15 @@ public:
 		}
 	}
 
+	List(std::initializer_list<T> initList)
+		: List()
+	{
+		for (T item : initList)
+		{
+			this->add(item);
+		}
+	}
+
 	T first() const
 	{
 		return this->head->getValue();
@@ -260,3 +269,4 @@ public:
 };
 
 #endif // LIST_H
+
